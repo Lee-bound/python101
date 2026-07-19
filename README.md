@@ -1,50 +1,283 @@
-# python101
-Basic Python programming
+# �� Python 101: Basic Programming Learning Pathway
+คลังเก็บเนื้อหาและแบบฝึกหัดสำหรับการเริ่มต้นเรียนรู้ภาษา **Python** โดยเน้นการสร้างพื้นฐานด้าน
+**Logical Thinking**, **Programming Fundamentals** และ **Input–Process–Output (IPO)**
+ผ่านการใช้งาน **Jupyter Notebook**
+---
+## �� Course Overview
+| Item | Description |
+|------|-------------|
+| **Course** | Python 101 |
+| **Level** | Beginner |
+| **Platform** | Jupyter Notebook / Google Colab |
+| **Learning Style** | Hands-on Learning |
+| **Goal** | Understand the fundamentals of Python programming using the IPO concept |
+---
+# �� Learning Pathway
+## �� Week 1–2 : Variables, Data Types, Input &amp; Output
+### �� Learning Objectives
+After completing this lesson, students will be able to:
+- Understand variables and memory concepts
+- Store data using variables
+- Receive user input using `input()`
+- Display output using `print()`
+- Convert data types using Type Casting
+- Design simple programs using the IPO model
+---
+# �� 1. Variables
+A **Variable** is a named storage location used to store data in memory.
+```python
+name = &quot;Alice&quot;
+age = 20
 
+height = 165.5
+```
+## Variable Naming Rules
+✅ Valid
+```python
+student_name
+_total
+price1
+```
+❌ Invalid
+```python
+2name
+student name
+```
+Python is **Case Sensitive**
+```python
+age
+Age
+AGE
+```
+These are **three different variables**.
+### �� Best Practice
+Use **snake_case**
+```python
+student_name
+item_price
+total_score
+```
+---
+# �� 2. Data Types
 
-# Python 101: A Foundational Learning Path
+Everything in Python is an **Object**.
+Each object has
+- Identity
+- Value
+- Type
+## Primitive Data Types
+| Type | Description | Example |
+|------|-------------|---------|
+| `int` | Integer | `25` |
+| `float` | Floating Point | `19.99` |
+| `bool` | Boolean | `True` |
+| `str` | String | `&quot;Python&quot;` |
+Example
+```python
+x = 10
+y = 2.5
+status = True
+name = &quot;John&quot;
+```
+Check data type
+```python
+type(x)
+```
+---
+# �� 3. Type Casting
+Python provides built-in functions to convert data types.
+```python
+int()
+float()
+str()
+bool()
+```
 
-Welcome to the **python101** repository. This guide provides a structured learning path for mastering the basics of Python programming, specifically focusing on data handling, memory, and user interaction [1, 3].
+Example
+```python
+age = &quot;20&quot;
+age = int(age)
+print(age + 5)
+```
+Convert number to string
+```python
+score = 95
+print(&quot;Score = &quot; + str(score))
+```
+---
+# �� 4. Input &amp; Output
+## User Input
+```python
+name = input(&quot;Enter your name : &quot;)
+```
+&gt; **Note:** `input()` always returns a **String**
+If you need an integer
+```python
+age = int(input(&quot;Age : &quot;))
+```
+---
+## Output
+Display data using
+```python
 
-## 📍 Phase 1: Understanding Variables and Memory
-Before writing logic, you must understand how Python "remembers" information.
-*   **The Variable Concept:** View variables not as boxes, but as **names, labels, or tags** used to refer to data stored in memory [4].
-*   **Assignment Logic:** Learn to use the assignment operator (`=`) to associate names with values. Explore **multiple assignment** to handle several variables in a single line [4, 5].
-*   **Naming Conventions:** Master the rules of legal names (starting with letters/underscores) and professional standards like **snake_case** (e.g., `item_price`) for self-documenting code [6, 7].
+print()
+```
+Example
+```python
+print(&quot;Hello Python&quot;)
+```
+---
+# �� 5. String Formatting
+## Traditional Formatting
+```python
+name = &quot;John&quot;
+age = 20
+print(&quot;Name = %s&quot; % name)
+print(&quot;Age = %d&quot; % age)
+```
+---
+## f-String (Recommended)
+```python
+name = &quot;John&quot;
+age = 20
+print(f&quot;Name = {name}&quot;)
+print(f&quot;Age = {age}&quot;)
+```
+### Advantages
+- Easy to read
+- Faster
+- Modern Python standard
+---
+# �� 6. IPO Concept
 
-## 📍 Phase 2: The Object Philosophy and Data Types
-In Python, every piece of data is an **object** with a distinct identity, type, and value [8].
-*   **The Identity of Data:** Understand that every object has a unique memory address (identity) and a type that dictates what operations are valid [8].
-*   **Common Data Types:**
-    *   **Numbers:** Integers (`int`) and floating-point numbers (`float`) [9].
-    *   **Booleans:** Logical `True` or `False` values (`bool`) [9].
-    *   **Collections:** Sequences of data like strings (`str`), lists (`list`), and tuples (`tuple`) [9, 10].
-*   **Type Discovery:** Use the built-in `type()` function to inspect the nature of any data object [9].
-
-## 📍 Phase 3: Interaction and Typecasting
-Functional programs must communicate with users and bridge different data formats.
-*   **User Input:** Utilize the `input()` function to prompt users for data. Be aware that it **always returns a string**, regardless of what is typed [11, 12].
-*   **Typecasting (Conversion):** Learn to convert data between types using `str()`, `int()`, `float()`, and `bool()` [13, 14].
-    *   *Note:* Using `int()` on a decimal (float) will **truncate** the value, throwing away the fractional part [13].
-
-## 📍 Phase 4: Modern String Formatting
-Presenting data clearly is essential for a professional user experience.
-*   **Placeholders:** Use special symbols to mark positions where values will be inserted into a message [15].
-*   **Formatting Methods:**
-    *   **Old-style (%):** Using `%s` for strings, `%d` for integers, and `%f` for floats [16].
-    *   **Modern f-strings:** Use the `f"{expression}"` syntax for a concise and readable way to embed variables and even function calls directly in text [17].
-
-## 📍 Phase 5: The IPO Pattern
-The **Input-Process-Output (IPO)** pattern is the foundational structure for basic software [18].
-1.  **Input:** Accept data from the user.
-2.  **Process:** Perform mathematical or logical operations.
-3.  **Output:** Display the results clearly.
-
-### 🛠 Practical Milestone Projects
-Complete these challenges to solidify your understanding:
-*   **Rectangle Calculator:** Accept width and height to calculate area ($a = w \times h$) [19].
-*   **Temperature Converter:** Build a multi-step tool to convert Kelvin to Celsius and Celsius to Fahrenheit [19, 20].
-*   **English Mass Converter:** Convert a complex combination of **stones, pounds, and ounces** into kilograms [20].
+Programming follows three simple steps.
+```text
+Input
+│
+▼
+Process
+│
+▼
+Output
+```
+Example
+```python
+width = float(input(&quot;Width : &quot;))
+height = float(input(&quot;Height : &quot;))
+area = width * height
+print(area)
+```
+### IPO Analysis
+| Step | Description |
+|------|-------------|
+| **Input** | Width, Height |
+| **Process** | Area = Width × Height |
+| **Output** | Area |
+---
+# �� Practice Exercises
+## Exercise 1 — Rectangle Area
+Calculate the area of a rectangle.
+```text
+Area = Width × Height
+```
 
 ---
-*Curriculum based on the [Lee-bound/python101](https://github.com/Lee-bound/python101) repository materials.*
+## Exercise 2 — Temperature Converter
+Convert between
+- Celsius
+- Fahrenheit
+- Kelvin
+---
+## Exercise 3 — Mass Conversion
+Convert
+- Stone
+- Pound
+- Ounce
+to
+```text
+Kilogram
+```
+---
+## Exercise 4 — BMI Calculator
+Calculate Body Mass Index
+```text
+BMI = Weight / Height²
+```
+---
+## Exercise 5 — Simple Interest
+Calculate
+```text
+Interest = P × R × T
+
+```
+---
+# �� Recommended Tools
+## Google Colab
+- No installation required
+- Runs directly in a web browser
+- Perfect for beginners
+�� https://colab.research.google.com
+---
+## Jupyter Notebook
+- Local development
+- Interactive programming
+- Supports Markdown + Python in one notebook
+�� https://jupyter.org
+---
+# �� Learning Outcomes
+At the end of this lesson, students will be able to
+- ✅ Create variables correctly
+- ✅ Select appropriate data types
+- ✅ Receive user input
+- ✅ Display output
+- ✅ Perform type conversion
+- ✅ Use f-strings
+- ✅ Apply the IPO concept
+- ✅ Solve basic programming problems
+---
+# �� Repository Structure
+
+```text
+Python101/
+│
+├── README.md
+│
+├── Week01_Variables.ipynb
+├── Week02_Input_Output.ipynb
+│
+├── Exercises/
+│ ├── Rectangle.ipynb
+│ ├── Temperature.ipynb
+│ ├── MassConversion.ipynb
+│ ├── BMI.ipynb
+│ └── Interest.ipynb
+│
+├── Images/
+├── Dataset/
+└── Resources/
+```
+---
+## ⭐ Course Topics
+- Variables
+- Data Types
+- Type Casting
+- Input &amp; Output
+- String Formatting
+- IPO Model
+- Basic Mathematical Programming
+- Hands-on Exercises
+---
+## �� Recommended Environment
+- Python 3.12+
+- Google Colab
+- Jupyter Notebook
+- Visual Studio Code (Optional)
+---
+
+## �� License
+This repository is intended for educational purposes.
+---
+&lt;p align=&quot;center&quot;&gt;
+**Python 101 — Learn Python from Zero to Programming Fundamentals**
+Created with ❤️ by **Pikul-CMU**
+&lt;/p&gt;
