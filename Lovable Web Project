@@ -1,0 +1,63 @@
+# 🍽️ Dinner Menu Randomizer
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-username/your-repo/blob/main/dinner_randomizer.ipynb)
+
+A quick Google Colab notebook script to eliminate decision fatigue by randomly selecting your next meal.
+
+---
+
+### 📌 How to Run in Google Colab
+
+1. Open the notebook by clicking the **"Open In Colab"** badge above.
+2. Click the **Play (▶️)** button on the code cell below to execute.
+3. Type your choice (`1`, `2`, or `3`) in the input box when prompted!
+
+---
+
+```python
+# @title 🍽️ Run Dinner Menu Randomizer
+import random
+
+
+def สุ่มเมนูอาหาร(สาย):
+    # เมนูอาหารจานเดียว / เมนูข้าว
+    อาหารจานเดียว = [
+        "ข้าวกะเพราหมูกรอบ ไข่ดาว",
+        "ข้าวผัดต้มยำทะเล",
+        "ข้าวมันไก่ต้ม+ไก่ทอด",
+        "ข้าวไข่ข้นกุ้งซอสสุกี้",
+    ]
+
+    # เมนูเส้น / ก๋วยเตี๋ยว / ส้มตำ
+    เมนูเส้นและแซ่บ = [
+        "ก๋วยเตี๋ยวเรือต้มยำหมูน้ำตก",
+        "ผัดไทยกุ้งสด",
+        "ส้มตำถาด + ไก่ย่าง",
+        "ราเมงซุปกระดูกหมูเข้มข้น",
+    ]
+
+    if สาย == "1":
+        return random.choice(อาหารจานเดียว)
+    elif สาย == "2":
+        return random.choice(เมนูเส้นและแซ่บ)
+    elif สาย == "3":
+        return random.choice(อาหารจานเดียว + เมนูเส้นและแซ่บ)
+    else:
+        return "กรุณาป้อนเฉพาะเลข 1, 2 หรือ 3 นะครับ!"
+
+
+def start_app():
+    print("🍽️ โปรแกรมสุ่มเมนูอาหารเย็นเติมพลัง")
+    print("1. สายอาหารจานเดียว / ข้าว (Rice Dishes)")
+    print("2. สายเส้น & สายแซ่บ (Noodles & Spicy)")
+    print("3. สุ่มรวมทั้งหมด (Anything Goes)")
+
+    choice = input("วันนี้อยากกินสายไหน (1/2/3): ")
+
+    print("\n✨ เมนูเด็ดของคุณมื้อนี้คือ:")
+    print(สุ่มเมนูอาหาร(choice))
+
+
+start_app()
+
+
